@@ -26,28 +26,6 @@ void loop() {
   }
 }
 
-// I2C Slave
-#include <Wire.h>
-
-const int slaveAddress = 8;
-
-void setup() {
-  Wire.begin(slaveAddress);
-  Wire.onRequest(requestEvent); 
-}
-
-void loop() {
-}
-
-void requestEvent() {
-  // Send data to master
-  Wire.write("Hello from I2C slave!");
-}
-
-// Serial Slave
-void setup() {
-  Serial.begin(9600);
-}
 
 void loop() {
   if (Serial.available() > 0) {
