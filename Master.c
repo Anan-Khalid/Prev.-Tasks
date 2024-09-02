@@ -1,4 +1,3 @@
-// Master
 #include <Wire.h>
 
 const int I2C_slaveAddress = 8;
@@ -23,13 +22,5 @@ void loop() {
   // Receive data from serial slave
   if (Serial.available() > 0) {
     String dataFromSerial = Serial.readStringUntil('\n');
-  }
-}
-
-
-void loop() {
-  if (Serial.available() > 0) {
-    String dataFromMaster = Serial.readStringUntil('\n');
-    Serial.println("Received from Master: " + dataFromMaster);
   }
 }
